@@ -1,12 +1,12 @@
-# Proxidize Android: Create 5G/4G Mobile Proxy Farms on Android Phones
+Proxidize Android: 利用Android手机创建5G/4G移动代理农场
 
-Proxidize Android Legacy is an Android application that enables anyone to make 4G or 5G mobile proxy farms using their Android phones without the need of anything else. Just download the app, hit connect, and your mobile proxy will be automatically generated.
+Proxidize Android Legacy是一款Android应用程序，可以让任何人使用他们的Android手机创建4G或5G移动代理农场，而不需要任何其他设备。只需下载该应用程序，点击连接，您的移动代理就会自动生成。
 
-Proxidize created Proxidize Android as a proof of concept for Proxidize MPM (Mobile Proxy Maker). The app accomplished its purpose, but was eventually taken down from the Google Play Store for reasons mentioned below.
+Proxidize创建了Proxidize Android作为Proxidize MPM（移动代理制造商）的概念验证。该应用程序达到了其目的，但由于以下原因最终从Google Play商店下架。
 
-Proxidize Android Legacy is the predecessor of the upcoming Proxidize Portable application which will be a drastic improvement on this app.
+Proxidize Android Legacy是即将推出的Proxidize Portable应用程序的前身，后者将是该应用程序的重大改进。
 
-Read this page in other languages: [русский](https://github.com/proxidize/proxidize-android/blob/main/README.ru.md)
+在其他语言中阅读此页面： [русский](https://github.com/proxidize/proxidize-android/blob/main/README.ru.md)
 
 ![Overview](https://i.imgur.com/gsRoRBt.png)
 
@@ -20,7 +20,7 @@ Read this page in other languages: [русский](https://github.com/proxidize
 
 ## What Is Proxidize:
 
-Proxidize is a multi-national effort started by a team of engineers to democratize access to web data & automation. Read the Proxidize manifesto: https://proxidize.com/manifesto/
+Proxidize是由一组工程师发起的跨国合作，旨在实现对Web数据和自动化的民主化访问。阅读Proxidize宣言：https://proxidize.com/manifesto/
 
 
 <div align="center"> <a href="https://proxidize.com/">
@@ -49,105 +49,100 @@ Proxidize is a multi-national effort started by a team of engineers to democrati
 
 ---
 
-## Features of Proxidize Android Legacy
+Proxidize Android Legacy的特点
 
 ![image](https://user-images.githubusercontent.com/107770894/190168239-2084da54-9b5a-4ed6-9ab8-3bd21671adf5.png)
 
 
-- Create A Mobile or Residential HTTP(S) or SOCKS5 proxy on Android, MacOS or Windows devices.
-- Rotate/Change IP manually using a button, automatically using a specific rotation interval.
-- API for rotating/changing the IP which can be used as a link/URL.
-- Connect to mobile data while using the app to generate a mobile proxy.
-- Connect to Wi-Fi while using the app to generate a residential proxy.
-- Super quick load balancing managed by global servers.
-- Add your own custom tunneling server for higher security and speeds.
-- Experimental: Change OS fingerprint for improved opsec.
-- Experimental: Split connection to WIFI backend to get better speeds.
+    在Android、MacOS或Windows设备上创建移动或住宅的HTTP(S)或SOCKS5代理。
+    可手动使用按钮旋转/更改IP，也可使用特定旋转间隔自动更改IP。
+    提供用作链接/URL的旋转/更改IP的API。
+    在使用应用程序生成移动代理时连接到移动数据。
+    在使用应用程序生成住宅代理时连接到Wi-Fi。
+    由全球服务器管理的超快速负载平衡。
+    添加自定义的隧道服务器以获得更高的安全性和速度。
+    实验性功能：更改操作系统指纹以提高运营安全性。
+    实验性功能：将连接分离到Wi-Fi后端以获得更好的速度。
 
 
 
 ---
 
-## How It Works and Architecture
+工作原理和架构
 
-Proxidize Android Legacy works by establishing a connection to a tunneling server via reverse proxies and then launching a local HTTP proxy server. This makes the proxy accessible from anywhere on the web, as the tunneling server handles the port forwarding and routing.
+Proxidize Android Legacy通过通过反向代理与隧道服务器建立连接，然后启动本地HTTP代理服务器来工作。这使得代理可以从Web的任何地方访问，因为隧道服务器处理了端口转发和路由。
 
 <div align="center">
     <img src="https://i.imgur.com/9UAAcx3.png" height="auto"/>
 </div>
 
 
-The application will select a random port between ```10000``` and ```60000```, use it connect to the client and then create a proxy server based on the random port along with a randomly generated username and password.
+该应用程序将在10000到60000之间选择一个随机端口，使用该端口连接到客户端，然后基于该随机端口以及随机生成的用户名和密码创建代理服务器。
 
 
 ---
 
-## Table of Contents
-
-- [Proxidize Android - Create 5G/4G Mobile Proxies on Android Phones](#proxidize-android-create-5g4g-mobile-proxy-farms-on-android-phones)
-  * [What Is Proxidize?](#what-is-proxidize)
-  * [Features of Proxidize Android Legacy](#features-of-proxidize-android-legacy)
-  * [How It Works & Architecture](#how-it-works-and-architecture)
-  * [Proxidize Android Legacy vs Proxidize Mobile Proxy Maker](#proxidize-android-legacy-vs-proxidize-mobile-proxy-maker)
-  * [How to create a 5G/4G mobile proxy on android phones: (Turn your phone into a mobile proxy)](#how-to-create-a-5g-or-4g-mobile-proxy-on-android-phones-turn-your-phone-into-a-mobile-proxy)
-    + [How to Use on Windows MacOS (Create 5G or 4G Mobile Proxies on WindowsMacOS)](#rotationchanging-the-ip-how-to-change-mobile-proxy-android-ip-address-using-airplane-mode)
-  * [Using the Proxy](#using-the-proxy)
-  * [Rotation/Changing the IP (How to Change Mobile Proxy Android IP Address Using Airplane Mode)](#rotation-changing-the-ip--how-to-change-mobile-proxy-android-ip-address-using-airplane-mode)
-    + [Automatically Changing the IP Address](#automatically-changing-the-ip-address)
-    + [Changing the IP Manually](#changing-the-ip-manually)
-    + [Changing the IP via URL/API](#changing-the-ip-via-url-api)
-  * [Supported Android Versions & Devices](#supported-android-versions--devices)
-  * [Deploying Your Own Server](#deploying-your-own-server)
-    + [Example](#example)
-  * [Using the App Without Connecting to the Tunneling Server First](#using-the-app-without-connecting-to-the-tunneling-server-first)
-  * [Reporting Issues](#reporting-issues)
-    + [Types of Issues That You Should Report](#types-of-issues-that-you-should-report)
-    + [How to Report the Issue](#how-to-report-the-issue)
-    + [Any Issues Unrelated to the App Will Be Closed, Such As](#any-issues-unrelated-to-the-app-will-be-closed--such-as)
-  * [Updates](#updates)
-  * [FAQ:](#faq)
-    + [Why is the app marked as harmful app/malware by Google?](#why-is-the-app-marked-as-harmful-appmalware-by-google)
-    + [My proxy isn't working with ```Proxy Refusing Connection``` error?](#my-proxy-isnt-working-with-proxy-refusing-connection-error)
-    + [My proxy stopped working after it used to work, can you help?](#my-proxy-stopped-working-after-it-used-to-work-can-you-help)
-    + [Why is my proxy slow?](#why-is-my-proxy-slow)
-    + [Where will this app work?](#where-will-this-app-work)
-    + [I keep getting a ```407 Error``` or the proxy keeps asking for authentication?](#i-keep-getting-a-407-error-or-the-proxy-keeps-asking-for-authentication)
-  * [Proxidize Portable](#proxidize-portable)
+    Proxidize Android - 在Android手机上创建5G/4G移动代理
+        什么是Proxidize？
+        Proxidize Android Legacy的功能
+        如何工作及架构
+        Proxidize Android Legacy vs Proxidize Mobile Proxy Maker
+        如何在Android手机上创建5G/4G移动代理：（将手机变成移动代理）
+            在Windows MacOS上使用（在WindowsMacOS上创建5G或4G移动代理）
+        使用代理
+        轮换/更改IP地址（如何使用飞行模式更改移动代理Android IP地址）
+            自动更改IP地址
+            手动更改IP
+            通过URL / API更改IP
+        支持的Android版本和设备
+        部署您自己的服务器
+            示例
+        不连接隧道服务器即可使用该应用程序
+        报告问题
+            您应该报告的问题类型
+            如何报告问题
+            任何与应用程序无关的问题都将被关闭，例如
+        更新
+        常见问题解答：
+            为什么谷歌标记此应用程序为有害应用程序/恶意软件？
+            我的代理无法使用，显示“代理拒绝连接”错误？
+            我的代理以前可以使用，但现在停止工作了，能帮忙解决吗？
+            为什么我的代理很慢？
+            此应用程序在哪些地方可用？
+            [我一直收到“407错误”或代理一直要求验证？](#
 
 
 ---
 
-## Proxidize Android Legacy vs Proxidize Mobile Proxy Maker
+Proxidize Android Legacy与Proxidize Mobile Proxy Maker相比不是一种替代品，而是一个概念验证。你可以在小规模的个人项目中使用这个应用程序，但一旦需要商业级解决方案，你将需要Proxidize MPM，原因如下：
 
-This app is not a replacement for Proxidize Mobile Proxy Maker, but a proof of concept. You can use this app at a small scale for personal projects, but once you need a commercial-grade solution, you'll need Proxidize MPM for the following reasons:
-
-- Such apps will always be naturally unreliable due to underlying infrastructure being designed mainly for IoT devices and not proxies.
-- Low speeds. Since both incoming and outgoing connections are passing through the same network interface, the speed you get will be a fifth of the mobile speed.
-- Difficult to manage at scale. It takes a 10 minutes to set up a 20-modem kit from Proxidize, but setting up 20 phones will take a full day if not more.
+    这样的应用程序由于底层基础架构主要设计用于物联网设备而不是代理，所以天然不可靠。
+    速度较慢。由于入站和出站连接都通过同一网络接口进行传输，因此你得到的速度将是移动速度的五分之一。
+    难以进行大规模管理。从Proxidize设置一个20个调制解调器套件只需要10分钟，但设置20个手机将需要整整一天，如果不是更长时间。
 
 ---
 
-## How to Create a 5G or 4G Mobile Proxy on Android Phones: (Turn Your Phone Into a Mobile Proxy)
+如何在安卓手机上创建5G或4G移动代理：（将您的手机变成移动代理）
 
 <div align="center">
     <img src="https://i.imgur.com/ASSDAe2.png" height="auto"/>
 </div>
 
 
-- Download Proxidize Android Legacy APK File
-- Install the APK on your device
-- Open the app and press "Connect".
-- Copy the proxy and you can use it anywhere.
+    下载Proxidize Android Legacy APK文件。
+    安装APK文件到您的设备。
+    打开应用程序并点击“连接”。
+    复制代理，您可以在任何地方使用它。
 
-And now you have created your very own 5G/4G mobile proxy!
+现在，您已经创建了自己的5G/4G移动代理！
 
-### How to Use on Windows MacOS (Create 5G or 4G Mobile Proxies on WindowsMacOS)
+以下是在Windows或macOS上使用Proxidize Android Legacy创建5G或4G移动代理的步骤：
 
-- Download any Android emulator such as BlueStacks
-- Download Proxidize Android Legacy APK file inside the emulator (Open this page from the emulator and download the APK)
-- Install the APK on your device
-- Open the app and press "Connect".
-- Copy the proxy and you can use it anywhere.
+    下载任何Android模拟器，如BlueStacks。
+    在模拟器内部下载Proxidize Android Legacy APK文件（从模拟器打开此页面并下载APK）。
+    安装APK文件到模拟器中。
+    打开应用并按“连接”按钮。
+    复制代理并在任何地方使用它。
 
 ---
 
@@ -238,78 +233,67 @@ OnePlus
 ```
 ---
 
-## Deploying Your Own Server
+## 部署您自己的服务器
 
 <div align="center">
     <img src="https://i.gyazo.com/cc24b11d87379469f06ac8f15257dcbe.png" height="auto"/>
 </div>
 
-Proxidize Android Legacy allows you to deploy your own tunneling server to avoid using shared/congested servers. To do that, you need to:
-- Create a new server on any host. Make sure you're  on a public network with all the ports publicly accessible.
-- Edit configuration file to add your server information.
-- Edit ```CUSTOM SERVER``` fields to add your new server.
+Proxidize Android Legacy允许您部署自己的隧道服务器，避免使用共享/拥挤的服务器。要做到这一点，您需要：
 
-### Example:
+    在任何主机上创建一个新服务器。确保您在公共网络上，所有端口都是公开可访问的。
+    编辑配置文件以添加您的服务器信息。
+    编辑“CUSTOM SERVER”字段以添加您的新服务器。
 
-- Server IP = ```5.5.5.5```
+示例：
 
-- Make sure the server is ```x86-64``` or ```AMD64``` running ```Ubuntu 20.04```
+    服务器IP = 5.5.5.5
 
-- SSH into your server
+    确保服务器为x86-64或AMD64，运行Ubuntu 20.04
 
-``` ssh username@5.5.5.5```
+    SSH进入您的服务器
 
-- Clone this repo
+ssh username@5.5.5.5
 
-``` git clone https://github.com/proxidize/proxidize-android.git  ```
+    克隆此存储库
 
-- Enter the repo directory
+git clone https://github.com/proxidize/proxidize-android.git
 
-``` cd ./proxidize-android  ```
+    进入存储库目录
 
-- Edit the server.ini file to add an authentication token
+cd ./proxidize-android
 
-``` vi``` or ```nano ./server/server.ini ```
+    编辑server.ini文件以添加身份验证令牌
 
-- Add the following info, replacing ```PORT``` and ```TOKEN``` with your own values. Keep the port value as ```2000``` unless you have a reason to change it.
+vi或nano ./server/server.ini
 
-```
-[common]
+    添加以下信息，用您自己的值替换PORT和TOKEN。除非您有更改它的理由，否则保持端口值为2000。
+    
+    [common]
 bind_port = PORT
 authentication_method=token
 token = TOKEN
-```
 
-```TOKEN``` is used to authenticate which clients are allowed to connect to this server. It can be any random set of characters such as ```12345678```.
+TOKEN用于验证哪些客户端被允许连接到此服务器。它可以是任何随机字符集，例如12345678。
 
-- Start the server
+ 给权利
+chmod +x server/server
 
-``` setsid ./server/server -c ./server/server.ini &```
+    启动服务器
 
-```setsid``` is used to keep the process alive after you close the terminal.
+setsid ./server/server -c ./server/server.ini &
 
-- Add the new server information to your application by going to menu > Change Server > Custom.
+setsid用于在关闭终端后保持进程运行。
 
-```HOST``` = The new server public IP address. In this example it's ```5.5.5.5```.
+    通过转到菜单>更改服务器>自定义，将新服务器信息添加到应用程序中。
 
-```Binding Port``` = The port your selected.
+HOST = 新服务器的公共IP地址。在本示例中，它是5.5.5.5。
 
-```Token``` = The token you selected.
+Binding Port = 您选择的端口。
 
-- Save the details, exit the app and open it again and hit connect. You will now connect to your new tunneling server.
+Token = 您选择的令牌。
 
-
----
-## Using the App Without Connecting to the Tunneling Server First
-
-In some cases, you might be able to connect directly to the phone without needing to connect to the tunneling server. The advantage of this is that you won't have to connect to the tunneling server first, which will offer 5-10% higher speeds.
-
-- Make sure your carrier can give you a dedicated v4 IP. This is very rare and you will need to confirm with the carrier.
-- Call your carrier and request they forward the ports for you.
-- Get your public IP address by searching for what's my IP address.
-- The app is listening on 0.0.0.0 so once you forward the proxy port, just connect to it using your public IP.
-- You can also do that if you're connected to WiFi, but you'll need to forward the ports on your router.
-
+    保存详细信息，退出应用程序，然后再次打开它并连接即可连接到您的新隧道服务器。
 
 ---
 
